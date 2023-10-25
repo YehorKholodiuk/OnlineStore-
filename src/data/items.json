@@ -1,0 +1,31 @@
+[{
+  "id": 1,
+  "name": "Rolex Submariner",
+  "price": 10000,
+  "imgUrl": "/imgs/RolexSubmariner.jpg"
+},
+  {
+    "id": 2,
+    "name": "ExplorerGMT",
+    "price": 12000,
+    "imgUrl": "/imgs/ExplorerGMT.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Hanhart 417ES",
+    "price": 2500,
+    "imgUrl": "/imgs/HanHart417.jpg"
+  },
+  {
+    "id": 4,
+    "name": "UBoat Chimera",
+    "price": 5000,
+    "imgUrl": "/imgs/UBoatChimera.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Seiko Porspex MM 300",
+    "price": 3000,
+    "imgUrl": "/imgs/SeikoMM.jpg"
+  }
+]

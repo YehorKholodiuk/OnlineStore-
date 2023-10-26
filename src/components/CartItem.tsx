@@ -45,9 +45,11 @@ export function Cartitem({id, quantity}: CartItemProps) {
          <div>{item.price * quantity}</div>
             <Button
                 onClick = {() => decreaseCartQuantity(item.id)}
+                variant="info"
             > - </Button>
             <Button
                 onClick = {() => increaseCartQuantity(item.id)}
+                variant="info"
             > + </Button>
             <Button
             variant= "outline-danger"

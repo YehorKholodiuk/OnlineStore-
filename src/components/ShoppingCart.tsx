@@ -1,6 +1,7 @@
 import {Offcanvas, Stack} from "react-bootstrap";
 import {useShoppingCart} from "../context/ShoppingCartContext.tsx";
 import {Cartitem} from "./CartItem.tsx";
+import {StoreItem} from "./StoreItem.tsx";
 type ShoppingCartProps = {
     isOpen: Boolean
 }
@@ -17,8 +18,11 @@ export function ShoppingCart ({isOpen}: ShoppingCartProps) {
                     {cartItems.map(item => (
                         <Cartitem key={item.id} {...item}/>
                     ))}
-                    {/*красивый знак доллара todo */}
-                    {/* вывести тотал todo */}
+                    <div>
+
+
+                    </div>
+
                 </Stack>
             </Offcanvas.Body>
         </Offcanvas>

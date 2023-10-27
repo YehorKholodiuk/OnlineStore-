@@ -1,5 +1,6 @@
 import {createContext, ReactNode, useContext, useState} from "react"
 import {ShoppingCart} from "../components/ShoppingCart.tsx"
+import storeItems from "../data/items.json"
 //todo типизировать начальное состояние контекста
 type ShoppingCartProviderProps = {
     children: ReactNode
@@ -15,11 +16,22 @@ type ShoppingCarContext = {
     openCart: () => void
     closeCart: () => void
     cartQuantity: number
+
+    searchTerm:string
+    setSearchTerm: (term:string) => void
+    filteredItems:StoreItem[]
+    setFilteredItems: (items: StoreItem[]) => void
+
 }
 
 type CartItem = {
     id: number
     quantity: number
+}
+
+type StoreItem = {
+    id:number
+    name:string
 }
 const ShoppingCartContext = createContext({} as ShoppingCarContext) // Todo начальное состояние
 
@@ -30,6 +42,9 @@ export function useShoppingCart() {
 export function ShoppingCartProvider({children}: ShoppingCartProviderProps) {
     const [isOpen, setIsOpen] = useState(false)
     const [cartItems, setCartItems] = useState<CartItem[]>([])
+
+    const [searchTerm, setSearchTerm] = useState('')
+    const [filteredItems, setFilteredItems] = useState<StoreItem[]>(storeItems)
 
     const cartQuantity = cartItems.reduce(
         (quantity, item) => item.quantity + quantity,
@@ -100,7 +115,11 @@ export function ShoppingCartProvider({children}: ShoppingCartProviderProps) {
                 cartItems,
                 openCart,
                 closeCart,
-                cartQuantity
+                cartQuantity,
+                searchTerm,
+                setSearchTerm,
+                filteredItems,
+                setFilteredItems
 
             }}
         >

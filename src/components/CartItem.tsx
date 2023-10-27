@@ -5,7 +5,7 @@ type CartItemProps = {
     id:number
     quantity:number
 }
-export function Cartitem({id, quantity}: CartItemProps) {
+export function CartItem({id, quantity}: CartItemProps) {
     const {removeFromCart} = useShoppingCart()
     const {increaseCartQuantity} = useShoppingCart()
     const {decreaseCartQuantity} = useShoppingCart()
